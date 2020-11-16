@@ -7,7 +7,11 @@ aliases: "/migration/"
 toc: true
 ---
 
-## Beta 1
+## v5.0.0-beta1
+
+### JavaScript
+
+- Data attributes for all JavaScript plugins are now namespaced to help distinguish Bootstrap functionality from third parties and your own code. For example, we use `data-bs-toggle` instead of `data-toggle`.
 
 ### Sass
 
