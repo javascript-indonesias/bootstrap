@@ -108,6 +108,9 @@ const HOVER_STATE_SHOW = 'show'
 const HOVER_STATE_OUT = 'out'
 
 const SELECTOR_TOOLTIP_INNER = '.tooltip-inner'
+const SELECTOR_MODAL = `.${CLASS_NAME_MODAL}`
+
+const EVENT_MODAL_HIDE = 'hide.bs.modal'
 
 const TRIGGER_HOVER = 'hover'
 const TRIGGER_FOCUS = 'focus'
@@ -202,7 +205,7 @@ class Tooltip extends BaseComponent {
   dispose() {
     clearTimeout(this._timeout)
 
-    EventHandler.off(this._element.closest(`.${CLASS_NAME_MODAL}`), 'hide.bs.modal', this._hideModalHandler)
+    EventHandler.off(this._element.closest(SELECTOR_MODAL), EVENT_MODAL_HIDE, this._hideModalHandler)
 
     if (this.tip) {
       this.tip.remove()
@@ -257,7 +260,7 @@ class Tooltip extends BaseComponent {
     Data.set(tip, this.constructor.DATA_KEY, this)
 
     if (!this._element.ownerDocument.documentElement.contains(this.tip)) {
-      container.appendChild(tip)
+      container.append(tip)
       EventHandler.trigger(this._element, this.constructor.Event.INSERTED)
     }
 
@@ -402,7 +405,7 @@ class Tooltip extends BaseComponent {
       if (this._config.html) {
         if (content.parentNode !== element) {
           element.innerHTML = ''
-          element.appendChild(content)
+          element.append(content)
         }
       } else {
         element.textContent = content.textContent
@@ -545,7 +548,7 @@ class Tooltip extends BaseComponent {
       }
     }
 
-    EventHandler.on(this._element.closest(`.${CLASS_NAME_MODAL}`), 'hide.bs.modal', this._hideModalHandler)
+    EventHandler.on(this._element.closest(SELECTOR_MODAL), EVENT_MODAL_HIDE, this._hideModalHandler)
 
     if (this._config.selector) {
       this._config = {
