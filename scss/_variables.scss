@@ -90,6 +90,10 @@ $theme-colors: (
 ) !default;
 // scss-docs-end theme-colors-map
 
+// scss-docs-start theme-colors-rgb
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value") !default;
+// scss-docs-end theme-colors-rgb
+
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
 $min-contrast-ratio:   4.5 !default;
@@ -401,6 +405,28 @@ $body-bg:                   $white !default;
 $body-color:                $gray-900 !default;
 $body-text-align:           null !default;
 
+// Utilities maps
+//
+// Extends the default `$theme-colors` maps to help create our utilities.
+
+// scss-docs-start utilities-colors
+$utilities-colors: map-merge(
+  $theme-colors-rgb,
+  (
+    "black": to-rgb($black),
+    "white": to-rgb($white),
+    "body":  to-rgb($body-color)
+  )
+) !default;
+// scss-docs-end utilities-colors
+
+// scss-docs-start utilities-text-colors
+$utilities-text-colors: map-loop($utilities-colors, rgba-css-var, "$key", "text") !default;
+// scss-docs-end utilities-text-colors
+
+// scss-docs-start utilities-bg-colors
+$utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg") !default;
+// scss-docs-end utilities-bg-colors
 
 // Links
 //
@@ -814,7 +840,7 @@ $input-padding-y-lg:                    $input-btn-padding-y-lg !default;
 $input-padding-x-lg:                    $input-btn-padding-x-lg !default;
 $input-font-size-lg:                    $input-btn-font-size-lg !default;
 
-$input-bg:                              $white !default;
+$input-bg:                              $body-bg !default;
 $input-disabled-bg:                     $gray-200 !default;
 $input-disabled-border-color:           null !default;
 
@@ -1202,6 +1228,13 @@ $pagination-border-radius-sm:       $border-radius-sm !default;
 $pagination-border-radius-lg:       $border-radius-lg !default;
 // scss-docs-end pagination-variables
 
+
+// Placeholders
+
+// scss-docs-start placeholders
+$placeholder-opacity-max:           .5 !default;
+$placeholder-opacity-min:           .2 !default;
+// scss-docs-end placeholders
 
 // Cards
 
