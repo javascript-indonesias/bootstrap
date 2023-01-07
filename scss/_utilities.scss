@@ -672,7 +672,6 @@ $utilities: map-merge(
           "transparent": transparent,
           "body-secondary": rgba(var(--#{$prefix}secondary-bg-rgb), var(--#{$prefix}bg-opacity)),
           "body-tertiary": rgba(var(--#{$prefix}tertiary-bg-rgb), var(--#{$prefix}bg-opacity)),
-          "body-emphasis": rgba(var(--#{$prefix}emphasis-bg-rgb), var(--#{$prefix}bg-opacity)),
         )
       )
     ),
@@ -720,7 +719,7 @@ $utilities: map-merge(
         2: var(--#{$prefix}border-radius),
         3: var(--#{$prefix}border-radius-lg),
         4: var(--#{$prefix}border-radius-xl),
-        5: var(--#{$prefix}border-radius-2xl),
+        5: var(--#{$prefix}border-radius-xxl),
         circle: 50%,
         pill: var(--#{$prefix}border-radius-pill)
       )
@@ -735,7 +734,7 @@ $utilities: map-merge(
         2: var(--#{$prefix}border-radius),
         3: var(--#{$prefix}border-radius-lg),
         4: var(--#{$prefix}border-radius-xl),
-        5: var(--#{$prefix}border-radius-2xl),
+        5: var(--#{$prefix}border-radius-xxl),
         circle: 50%,
         pill: var(--#{$prefix}border-radius-pill)
       )
@@ -750,7 +749,7 @@ $utilities: map-merge(
         2: var(--#{$prefix}border-radius),
         3: var(--#{$prefix}border-radius-lg),
         4: var(--#{$prefix}border-radius-xl),
-        5: var(--#{$prefix}border-radius-2xl),
+        5: var(--#{$prefix}border-radius-xxl),
         circle: 50%,
         pill: var(--#{$prefix}border-radius-pill)
       )
@@ -765,7 +764,7 @@ $utilities: map-merge(
         2: var(--#{$prefix}border-radius),
         3: var(--#{$prefix}border-radius-lg),
         4: var(--#{$prefix}border-radius-xl),
-        5: var(--#{$prefix}border-radius-2xl),
+        5: var(--#{$prefix}border-radius-xxl),
         circle: 50%,
         pill: var(--#{$prefix}border-radius-pill)
       )
@@ -780,7 +779,7 @@ $utilities: map-merge(
         2: var(--#{$prefix}border-radius),
         3: var(--#{$prefix}border-radius-lg),
         4: var(--#{$prefix}border-radius-xl),
-        5: var(--#{$prefix}border-radius-2xl),
+        5: var(--#{$prefix}border-radius-xxl),
         circle: 50%,
         pill: var(--#{$prefix}border-radius-pill)
       )
